@@ -31,7 +31,7 @@ public class Astrologer {
 	private String image;
 	private String description;
 	
-	1234556
+
 	@JsonIgnore
 	@ManyToOne
 	private User user;
