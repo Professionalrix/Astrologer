@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+
+	<!-- Main Content -->
+
+	<!-- 
+<section class="content">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Astrologers List</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Components</a></li>
+                        <li class="breadcrumb-item active">Astrologers List</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">                
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>                                
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            
+                           
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+	<!-- Main Content -->
+	<section class="content">
+		<div class="body_scroll">
+			<div class="block-header">
+				<div class="row">
+					<div class="col-lg-7 col-md-6 col-sm-12">
+						<h2>Astrologers list</h2>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html"><i
+									class="zmdi zmdi-home"></i> Aero</a></li>
+							<li class="breadcrumb-item">Astrologers Details</li>
+							<li class="breadcrumb-item active">Astrologers list</li>
+						</ul>
+						<button class="btn btn-primary btn-icon mobile_menu" type="button">
+							<i class="zmdi zmdi-sort-amount-desc"></i>
+						</button>
+					</div>
+					<div class="col-lg-5 col-md-6 col-sm-12">
+						<button
+							class="btn btn-primary btn-icon float-right right_icon_toggle_btn"
+							type="button">
+							<i class="zmdi zmdi-arrow-right"></i>
+						</button>
+						<button class="btn btn-success btn-icon float-right" type="button">
+							<i class="zmdi zmdi-plus"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row clearfix">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="card project_list">
+							<div class="table-responsive">
+								<table class="table table-hover c_table theme-color">
+									<thead>
+										<tr>
+											<th style="width: 50px;">Photo</th>
+											<!--<th></th>-->
+											<th>Name</th>
+											<th class="hidden-md-down">Rating</th>
+											<th></th>
+											<th class="hidden-md-down" width="150px">Approval</th>
+											<th>Profile</th>
+											<th>Balance</th>
+											<th>Delete</th>
+
+										</tr>
+									</thead>
+									<tbody>
+																																			
+																	
+									
+										<tr class="sony"  th:each="c : ${astrologers}">
+											<td><img class="rounded avatar"
+												th:src="@{/assets/images/xs/avatar1.jpg}" alt=""></td>
+											<td th:text="${c.name}"><strong></strong><br></td>
+											<td>
+												 <div class="container"><div class="stars-outer">
+														<div class="stars-inner"></div>
+													</div>
+													<span class="number-rating"></span>
+												</div>
+											</td>
+											<td></td>
+
+
+											<td><button type="button" class="btn btn-primary"
+													data-target="#approve" data-toggle="modal">Approve</button></td>
+											
+											<!-- <td><button type="button" class="btn btn-primary"
+													data-target="#view" data-toggle="modal">View
+													Profile</button></td> -->
+											
+											<td>
+											<a id ="view1" class="btn btn-primary eBtn">
+												View Profile
+											</a>
+											
+											
+											</td>
+											
+											
+											<td><button type="button" class="btn btn-primary"
+													data-target="#mywallet" data-toggle="modal">Wallet</button></td>
+											
+											
+										<!-- <td><button type="button" class="btn btn-primary"
+												data-target="#delete" data-toggle="modal">Delete</button></td> -->
+											<td>
+											<button th:onclick="|deleteContact(${c.cId})|" class="btn btn-primary ">Delete</button>
+											</td>
+										
+										</tr>
+					
+																	
+							
+													<!--<div class="container">
+        <div class="rating-wrap">
+            <div class="center">
+                <fieldset class="rating">
+                    <input type="radio" id="star5" name="rating" value="5"/><label for="star5" class="full" title="Awesome"></label>
+                    <input type="radio" id="star4.5" name="rating" value="4.5"/><label for="star4.5" class="half"></label>
+                    <input type="radio" id="star4" name="rating" value="4"/><label for="star4" class="full"></label>
+                    <input type="radio" id="star3.5" name="rating" value="3.5"/><label for="star3.5" class="half"></label>
+                    <input type="radio" id="star3" name="rating" value="3"/><label for="star3" class="full"></label>
+                    <input type="radio" id="star2.5" name="rating" value="2.5"/><label for="star2.5" class="half"></label>
+                    <input type="radio" id="star2" name="rating" value="2"/><label for="star2" class="full"></label>
+                    <input type="radio" id="star1.5" name="rating" value="1.5"/><label for="star1.5" class="half"></label>
+                    <input type="radio" id="star1" name="rating" value="1"/><label for="star1" class="full"></label>
+                    <input type="radio" id="star0.5" name="rating" value="0.5"/><label for="star0.5" class="half"></label>
+                </fieldset>
+            </div>
+
+            <h4 id="rating-value"></h4>
+        </div>
+    </div>-->
+
+									</tbody>
+								</table>
+							</div>
+							<!--  Astrologers detete -->
+							<div class="modal" tabindex="-1" id="delete">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Delete</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Do You want to delete the Astrologer?</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">No</button>
+											<button type="button" class="btn btn-primary"
+												data-dismiss="modal">Yes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<!--  Astrologers mywallet -->
+							<div class="modal" tabindex="-1" id="mywallet">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">My Order</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										
+										<div class="modal-body">
+											<div id="content-container"
+												style="padding-top: 0px !important;">
+												<div class="text-center pad-all">
+													<div class="pad-ver">
+														<img class="rounded avatar"
+															src="assets/images/xs/avatar1.jpg" alt="">
+													</div>
+													<div class="pad-ver">Muskan</div>
+													<h4 class="text-lg text-overflow mar-no">Astrologers</h4>
+
+													<hr>
+												</div>
+
+
+												<div class="table-responsive">
+													<table class="table table-striped">
+														<thead>
+															<tr>
+																<td>Total Sold</td>
+
+															</tr>
+
+														</thead>
+														<tbody>
+															<tr>
+																<td>Total Commission</td>
+															</tr>
+															<tr>
+																<td>Paid By Astrologers</td>
+															</tr>
+															<tr>
+																<td>Commission on Paid</td>
+															</tr>
+															<tr>
+																<td>Paid To Astrologers(By admin)</td>
+															</tr>
+															<tr>
+																<td>Due To Vendar</td>
+															</tr>
+															<tr>
+																<td>Amount &nbsp &nbsp &nbsp &nbsp<input
+																	type="text" name="amount"
+																	placeholder="Enter your Amount"></td>
+															</tr>
+															<tr>
+																<td>
+																	<button type="button" class="btn btn-primary">Submit</button>
+																</td>
+															</tr>
+
+														</tbody>
+													</table>
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary"
+											data-dismiss="modal">Save</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--  Astrologers Approval -->
+
+						<div class="modal" tabindex="-1" id="approve">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Approval</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p>Do You want to approve the Astrologers ?</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">No</button>
+										<button  type="button" class="btn btn-primary"
+											>Yes</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Astrologers Profile -->
+
+						<div class="modal" tabindex="-1" id="view" th:each="c :${astrologers}">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Customer Profile</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div id="content-container"
+											style="padding-top: 0px !important;">
+											<div class="text-center pad-all">
+												<div class="pad-ver">
+													<img class="rounded avatar"
+														src="assets/images/xs/avatar1.jpg" alt="">
+												</div>
+												<div class="pad-ver" th:text="${c.name}">Anil Saini</div>
+												<h4 class="text-lg text-overflow mar-no">Astrologers
+													Details</h4>
+
+												<hr>
+											</div>
+
+
+											<div class="table-responsive">
+												<table class="table">
+													<thead>
+														<tr>
+														
+														 	<td>Name</td>
+														 	<td th:text="${c.name}"></td>
+														
+														
+														</tr>
+														<tr>
+															<td>Gender</td>
+															<td th:text="${c.gender}"></td>
+														</tr>
+														<tr>
+															<td>Birth Date</td>
+															<td th:text="${c.dob}"></td>
+														</tr>
+														<tr>
+															<td>Age</td>
+															<td th:text="${c.age}"></td>
+														</tr>
+														<tr>
+															<td>Experience</td>
+															<td th:text="${c.experience}"></td>
+														</tr>
+														<tr>
+															<td>Contact Us</td>
+															 <td th:text="${c.phone}"></td>
+														</tr>
+														<tr>
+															<td>Address</td>
+															<td th:text="${c.address}"></td>
+														</tr>
+														
+													</thead>
+												</table>
+											</div>
+
+											<div class="nk-block-head">
+												<h5 class="title">Additional Information</h5>
+											</div>
+											<div class="body">
+												<div class="table-responsive">
+													<table class="table">
+														<thead>
+
+															<tr>
+																<td>Speciality</td>
+																<td th:text="${c.speciality}"></td>
+															</tr>
+															<tr>
+																<td>Followers</td>
+																<td th:text="${c.followers}"></td>
+															</tr>
+															<tr>
+																<td>Total Gift</td>
+																<td th:text="${c.totalGift}"></td>
+															</tr>
+															<tr>
+																<td>Total Live Session</td>
+																 <td th:text="${c.liveSession}"></td>
+															</tr>
+															<tr>
+																<td>Number of Posts</td>
+																<td th:text="${c.noOfPosts}"></td>
+															</tr>
+														</thead>
+													</table>
+												</div>
+
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary"
+												data-dismiss="modal">Save</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Customer Wallet-->
+							<!--
+                                             <div class="modal" tabindex="-1" id="mywallet">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title">Customer Wallet</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div id="content-container" style="padding-top:0px !important;">
+                                                    <div class="text-center pad-all">
+                                                        <div class="pad-ver">
+                                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                                        </div>
+                                                        <div class="pad-ver"> Muskan </div>
+                                                        <h4 class="text-lg text-overflow mar-no">Customer</h4>
+                                                        
+                                                        <hr>
+                                                    </div>
+                                                
+                                                
+                                                <div class="table-responsive">
+                                                                            <table class="table">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td>Total Blance</td>
+                                                                                    </tr>
+                                                                                </thead>     
+                                                                            </table>
+                                                                        </div>   
+                                                                        <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                                  </div>
+                                                 </div>
+                                                </div>
+                                                </div>
+
+                                              --->
+
+
+
+							<!--
+                           <ul class="pagination pagination-primary mt-4">
+                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                        </ul>
+                        -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--
+<script src="assets/js/Pages/rating/star-ratings.js"></script>
+-->
+
+
+ 
+	    
+   
+
+</body>
+</html>

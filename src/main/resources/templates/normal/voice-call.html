@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Main Content -->
+<!-- Main Content -->
+<section class="content">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Voice Call</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
+                        <li class="breadcrumb-item">Voice Details</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">                
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                    <button class="btn btn-success btn-icon float-right" type="button"><i class="zmdi zmdi-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="card project_list">
+                        <div class="table-responsive">
+                            <table class="table table-hover c_table theme-color">
+                                <thead>
+                                    <tr>                                       
+                                        <th style="width:50px;">Photo</th>
+                                        <!--<th></th>-->
+                                        <th>Name</th>                                        
+                                        <th class="hidden-md-down">Contact Us</th>
+                                        <th></th>
+                                        <th class="hidden-md-down" width="150px">Time Duration</th>
+                                        <th>Profile</th>
+                                        <th>Balance</th>
+                                        <th>Delete</th>
+                                       
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td>
+                                            <strong>Aditi</strong><br>
+                                            
+                                        </td>
+                                        <td>
+                                            <strong>965499942</strong><br>
+                                            
+                                        </td>       
+                                        <td>
+                                            
+                                        </td>                                     
+                                        
+                                        
+                                        <td><button type="button" class="btn btn-primary" data-target="#timeduration" data-toggle="modal">Total Time</button></td> 
+                                        <td><button type="button" class="btn btn-primary" data-target="#view" data-toggle="modal">View Profile</button></td>  
+    
+                                        <td><button type="button" class="btn btn-primary" data-target="#mywallet" data-toggle="modal">Balance</button></td>
+                                        <td><button type="button" class="btn btn-primary" data-target="#detete" data-toggle="modal">Delete</button></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td>
+                                            <strong>Muskan </strong><br>
+                                            
+                                        </td>
+                                        <td>
+                                            <strong>965499942</strong><br>
+                                            
+                                        </td>       
+                                        <td>
+                                            
+                                        </td>                                     
+                                        <td><button type="button" class="btn btn-primary" data-target="#timeduration" data-toggle="modal">Total Time</button></td> 
+                                        <td><button type="button" class="btn btn-primary" data-target="#view" data-toggle="modal">View Profile</button></td>  
+    
+                                        <td><button type="button" class="btn btn-primary" data-target="#mywallet" data-toggle="modal">Balance</button></td>
+                                        <td><button type="button" class="btn btn-primary" data-target="#detete" data-toggle="modal">Delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td>
+                                            <strong>Abcd</strong><br>
+                                            
+                                        </td>
+                                        <td>
+                                            <strong>9654989427</strong><br>
+                                            
+                                        </td>       
+                                        <td>
+                                            
+                                        </td>                                     
+                                        <td><button type="button" class="btn btn-primary" data-target="#timeduration" data-toggle="modal">Total Time</button></td> 
+                                        <td><button type="button" class="btn btn-primary" data-target="#view" data-toggle="modal">View Profile</button></td>  
+    
+                                        <td><button type="button" class="btn btn-primary" data-target="#mywallet" data-toggle="modal">Balance</button></td>
+                                        <td><button type="button" class="btn btn-primary" data-target="#detete" data-toggle="modal">Delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td>
+                                            <strong>Muskan </strong><br>
+                                            
+                                        </td>
+                                        <td>
+                                            <strong>965499942</strong><br>
+                                            
+                                        </td>       
+                                        <td>
+                                            
+                                        </td>                                     
+                                        <td><button type="button" class="btn btn-primary" data-target="#timeduration" data-toggle="modal">Total Time</button></td> 
+                                        <td><button type="button" class="btn btn-primary" data-target="#view" data-toggle="modal">View Profile</button></td>  
+    
+                                        <td><button type="button" class="btn btn-primary" data-target="#mywallet" data-toggle="modal">Balance</button></td>
+                                        <td><button type="button" class="btn btn-primary" data-target="#detete" data-toggle="modal">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                         <!-- Approval -->
+                         <div class="modal" tabindex="-1" id = "approve">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Approval</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Do You want to approve the Voice Call ?</p>
+                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+         
+                       <!-- Astrologers Profile -->
+
+                                <div class="modal" tabindex="-1" id="view">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">Astrologers Profile</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div id="content-container" style="padding-top:0px !important;">
+                                        <div class="text-center pad-all">
+                                            <div class="pad-ver">
+                                                <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                            </div>
+                                            <div class="pad-ver"> Anil Saini</div>
+                                            <h4 class="text-lg text-overflow mar-no">Astrologers info</h4>
+                                            
+                                            <hr>
+                                        </div>
+                                          </div>
+                                    
+                                    
+                                                           <div class="table-responsive">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Name</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Gender</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Brith Date</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Age</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Experience</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Contact Us</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Address</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                        </tr>
+                                                                    </thead>  
+                                                                </table>
+                                                            </div>  
+
+                                                          <div class="nk-block-head"><h5 class="title">Additional Information</h5></div>                                               
+                                                          <div class="body">
+                                                            <div class="table-responsive">
+                                                                <table class="table"> 
+                                                                    <thead>
+                                                                        
+                                                                        <tr>
+                                                                            <td>Speciality</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Followers</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Total Gift</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Total Live Session</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Number of Posts</td>
+                                                                        </tr>
+                                                                    </thead>
+                                                                </table>                                                                            
+                                                        </div>
+                                               
+                                                        </div>
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+
+                             <!--  Astrologers Charge -->
+                              <div class="modal" tabindex="-1" id="charge">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Voice Charge</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <select class="mdb-select md-form colorful-select dropdown-primary">
+                                      <option value="1">2</option>
+                                      <option value="2">2.5</option>
+                                      <option value="3">5</option>
+                                      <option value="4">8</option>
+                                      <option value="5">10</option>
+                                    </select>&nbsp &nbsp &nbsp
+                                    <button type="button" class="btn btn-primary">Submit</button>
+                                    
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save </button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+<!--Time Duration-->
+<div class="modal" tabindex="-1" id="timeduration">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Time Duration</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div id="content-container" style="padding-top:0px !important;">
+                                    <div class="text-center pad-all">
+                                        <div class="pad-ver">
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </div>
+                                        <div class="pad-ver">Aditi  </div>
+                                        <h4 class="text-lg text-overflow mar-no">Customer</h4>
+                                        
+                                        <hr>
+                                    </div>
+                                
+                                
+                                       <div class="table-responsive">
+                                                           <table class="table table-striped">
+                                                              <thead>
+                                                                <tr>
+                                                                  <th scope="col">Total Calls</th>
+                                                                  <th scope="col">Missed Calls</th>
+                                                                  <th scope="col">Incoming</th>
+                                                                  <th scope="col">Outgoing</th>
+                                                                  <th scope="col">Total Mins</th>
+                                                                </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                <tr>
+                                                                  
+                                                                  <td>20</td>
+                                                                  <td>5</td>
+                                                                   <td>10 min</td>
+                                                                  <td>3 min</td>
+                                                                   <td>20 min</td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td>20</td>
+                                                                  <td>2</td>
+                                                                   <td>10 min</td>
+                                                                  <td>3 min</td>
+                                                                   <td>20 min</td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td>20</td>
+                                                                  <td>5</td>
+                                                                  <td>10 min</td>
+                                                                  <td>3 min</td>
+                                                                   <td>20 min</td>
+                                                                </tr>
+                                                              </tbody>
+                                                            </table>
+                                                        
+                                                        </div>
+                                                    </div>
+                                           
+                                                    </div>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Edit</button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                          <!-- Customer Wallet-->                                          
+
+                            <div class="modal" tabindex="-1" id="mywallet">
+                                <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title">Balance</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div id="content-container" style="padding-top:0px !important;">
+                                                    <div class="text-center pad-all">
+                                                        <div class="pad-ver">
+                                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                                        </div>
+                                                        <div class="pad-ver"> Muskan </div>
+                                                        <h4 class="text-lg text-overflow mar-no"></h4>
+                                                        
+                                                        <hr>
+                                                    </div>
+                                                
+                                                
+                                                <div class="table-responsive">
+                                                                            <table class="table">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <td>Total Balance</td>
+                                                                                    </tr>
+                                                                                </thead>     
+                                                                            </table>
+                                                                        </div>   
+                                                                        <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                                 </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                                </div>
+                            </div>  
+
+                            <div class="modal" tabindex="-1" role="dialog" id="detete">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Delete</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                               <p>Do You want to delete the Astrologers ?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+</body>
+</html>

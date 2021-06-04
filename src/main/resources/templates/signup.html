@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<section>
+
+<div class="authentication">    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <form class="card auth_form" th:action="@{/do_register}" method="post" th:object="${user}">
+                    <div class="header">
+                        <img class="logo" src="assets/images/logo.svg" alt="">
+                        <h5>Sign Up</h5>
+                        <span>Register a new membership</span>
+                    
+						<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+						<p th:text="${session.message.content}"></p>
+						
+						<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						 </div>
+				                 
+                       
+                   </div>
+                                             
+                    <div class="body">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control"   placeholder="Username" name="name" >
+                                                       
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="zmdi zmdi-account-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter Email" name="email">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="zmdi zmdi-email"></i></span>
+                            </div>
+                        </div>                        
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Password" name="password">
+                            <div class="input-group-append">                                
+                                <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
+                            </div>                            
+                        </div>
+                        <div class="checkbox">
+                            <input id="remember_me" type="checkbox" name="agreement">
+                            <label for="remember_me">I read and agree to the <a href="javascript:void(0);">terms of usage</a></label>
+                        </div>
+                        <button class="btn btn-primary btn-block waves-effect waves-light">SIGN UP</button>
+                        <div class="signin_with mt-3">
+                            <a th:href="@{/signin}" class="link" >You already have a membership?</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="copyright text-center">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>,
+                    <span><a href="templatespoint.net">Templates Point</a></span>
+                </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+                <div class="card">
+                    <img th:src="@{/assets/images/signup.svg}" alt="Sign Up" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</section>
+
+
+
+</body>
+</html>

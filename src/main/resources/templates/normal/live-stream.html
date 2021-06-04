@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Main Content -->
+<section class="content">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Live Stream</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
+                        <li class="breadcrumb-item">Live Stream Details</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">                
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                    <button class="btn btn-success btn-icon float-right" type="button"><i class="zmdi zmdi-plus"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="card project_list">
+                        <div class="table-responsive">
+                            <table class="table table-hover c_table theme-color">
+                                <thead>
+                                    <tr>                                       
+                                        <th style="width:50px;">Photo</th>
+                                        <!--<th></th>-->
+                                        <th>Name</th>                                        
+                                        <th class="hidden-md-down">Contact Us</th>
+                                        <th></th>
+                                        <th class="hidden-md-down" width="150px">Date</th>
+                                        <th>Time Duration</th>                                        
+                                        <th>Gifts</th>
+                                        <th>Message</th>
+                                        <th>Delete</th>
+                                       
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td>
+                                            <strong>ABCD</strong><br>
+                                            
+                                        </td>
+                                        <td>
+                                            <strong>965494392</strong><br>
+                                            
+                                        </td>       
+                                        <td>
+                                            
+                                        </td>                                     
+                                        
+                                        
+                                        <td><strong>23/11/20</strong><br></td> 
+                                        <td><button type="button" class="btn btn-primary" data-target="#timeduration" data-toggle="modal">Total Time</button></td>  
+                                        <td><button type="button" class="btn btn-primary" data-target="#product" data-toggle="modal">Received</button></td>     
+                                        <td><strong><a href="livestream-msgs.html" title="">Messages</a></strong></td>
+                                        <td><button type="button" class="btn btn-primary" data-target="#detete" data-toggle="modal">Delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td>
+                                            <strong>Muskan </strong><br>
+                                            
+                                        </td>
+                                        <td>
+                                            <strong>965494392</strong><br>
+                                            
+                                        </td>       
+                                        <td>
+                                            
+                                        </td>                                     
+                                        
+                                        
+                                        <td><strong>27/11/20</strong><br></td> 
+                                        <td><button type="button" class="btn btn-primary" data-target="#timeduration" data-toggle="modal">Total Time</button></td>  
+                                        <td><button type="button" class="btn btn-primary" data-target="#product" data-toggle="modal">Received</button></td>     
+                                        <td><strong><a href="livestream-msgs.html" title="">Messages</a></strong></td>
+                                        <td><button type="button" class="btn btn-primary" data-target="#detete" data-toggle="modal">Delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td>
+                                            <strong>Muskan </strong><br>
+                                            
+                                        </td>
+                                        <td>
+                                            <strong>965494392</strong><br>
+                                            
+                                        </td>       
+                                        <td>
+                                            
+                                        </td>                                     
+                                        
+                                        
+                                        <td><strong>25/11/20</strong><br></td> 
+                                        <td><button type="button" class="btn btn-primary" data-target="#timeduration" data-toggle="modal">Total Time</button></td>  
+                                        <td><button type="button" class="btn btn-primary" data-target="#product" data-toggle="modal">Received</button></td>     
+                                        <td><strong><a href="livestream-msgs.html" title="">Messages</a></strong></td>
+                                        <td><button type="button" class="btn btn-primary" data-target="#detete" data-toggle="modal">Delete</button></td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+<!--Time Duration-->
+
+                         <div class="modal" tabindex="-1" id="timeduration">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Time Duration</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div id="content-container" style="padding-top:0px !important;">
+                                    <div class="text-center pad-all">
+                                        <div class="pad-ver">
+                                            <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                        </div>
+                                        <div class="pad-ver">Aditi  </div>
+                                        <h4 class="text-lg text-overflow mar-no">Customer</h4>
+                                        
+                                        <hr>
+                                    </div>
+                                
+                                
+                                       <div class="table-responsive">
+                                                           <table class="table table-striped">
+                                                              <thead>
+                                                                <tr>
+                                                                  <th scope="col">Total Time</th>
+                                                                  <th scope="col">Start</th>
+                                                                  <th scope="col">End</th>
+                                                                  <th scope="col">Total Mins</th>
+                                                                </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                <tr>                                  
+                                                                  <td>1 Hour</td>
+                                                                  <td>5:30 PM</td>
+                                                                   <td>6:30 PM</td>
+                                                                   <td>60 min</td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td>1.30 Hour</td>
+                                                                  <td>5:30 PM</td>
+                                                                   <td>7:00 PM</td>
+                                                                   <td>90 min</td>
+                                                                </tr>
+                                                                <tr>
+                                                                 <td>2 Hour</td>
+                                                                  <td>5:30 PM</td>
+                                                                   <td>7:30 PM</td>
+                                                                   <td>120 min</td>
+                                                                </tr>
+                                                              </tbody>
+                                                            </table>
+                                                        
+                                                        </div>
+                                                    </div>
+                                           
+                                                    </div>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Edit</button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+         
+                       <!-- Astrologers Profile -->
+
+                                <div class="modal" tabindex="-1" id="view">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">Astrologers Profile</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div id="content-container" style="padding-top:0px !important;">
+                                        <div class="text-center pad-all">
+                                            <div class="pad-ver">
+                                                <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                            </div>
+                                            <div class="pad-ver"> Anil Saini</div>
+                                            <h4 class="text-lg text-overflow mar-no">Astrologers info</h4>
+                                            
+                                            <hr>
+                                        </div>
+                                          </div>
+                                    
+                                    
+                                                           <div class="table-responsive">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td>Name</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Gender</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Brith Date</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Age</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Experience</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Contact Us</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Address</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                        </tr>
+                                                                    </thead>  
+                                                                </table>
+                                                            </div>  
+
+                                                          <div class="nk-block-head"><h5 class="title">Additional Information</h5></div>                                               
+                                                          <div class="body">
+                                                            <div class="table-responsive">
+                                                                <table class="table"> 
+                                                                    <thead>
+                                                                        
+                                                                        <tr>
+                                                                            <td>Speciality</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Followers</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Total Gift</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Total Live Session</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Number of Posts</td>
+                                                                        </tr>
+                                                                    </thead>
+                                                                </table>                                                                            
+                                                        </div>
+                                               
+                                                        </div>
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+
+<!-- Message -->
+                                <div class="modal" tabindex="-1" id="message">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">Message</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div id="content-container" style="padding-top:0px !important;">
+                                        <div class="text-center pad-all">
+                                            <div class="pad-ver">
+                                                <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                            </div>
+                                            <div class="pad-ver">
+                                          </div>
+                                            <h4 class="text-lg text-overflow mar-no"></h4>
+                                            
+                                            <hr>
+                                        </div>
+                                    
+                                    
+                                        <div class="table-responsive">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>S.no.</th>
+                                                                            <th>Message</th>
+                                                                            
+                                                                            
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th scope="row">1</th>
+                                                                            <td>A dropdown menu is a toggleable menu that allows the user to choose one value from a predefined list</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th scope="row">2</th>
+                                                                            <td>A dropdown menu is a toggleable menu that allows the user to choose one value from a predefined list</td>
+                                                                        </tr>
+                                                                        
+                                                                        
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>            
+                                                        </div>
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Edit</button>
+                                                         </div>
+                                                   </div>
+                                                </div>
+                                            </div>
+
+                                <!-- Product -->
+                                <div class="modal" tabindex="-1" id="product">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">Product</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div id="content-container" style="padding-top:0px !important;">
+                                        <div class="text-center pad-all">
+                                            <div class="pad-ver">
+                                                <img class="rounded avatar" src="assets/images/xs/avatar1.jpg" alt="">
+                                            </div>
+                                            <div class="pad-ver">
+                                          </div>
+                                            <h4 class="text-lg text-overflow mar-no"></h4>
+                                            
+                                            <hr>
+                                        </div>
+                                    
+                                    
+                                    <table class="table table-striped">
+                                                          <thead>
+                                                            <tr>
+                                                              <th scope="col">S.No</th>
+                                                              <th scope="col">Product Name</th>
+                                                              <th scope="col">Prize</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                            <tr>
+                                                              <th scope="row">1</th>
+                                                              <td>Laddoo</td>
+                                                              <td>10</td>
+                                                              
+                                                            </tr>
+                                                            <tr>
+                                                              <th scope="row">2</th>
+                                                              <td>Rudraksha</td>
+                                                              <td>40</td>
+                                                              
+                                                            </tr>
+                                                            <tr>
+                                                              <th scope="row">3</th>
+                                                              <td>Gold</td>
+                                                              <td>15</td>
+                                                              
+                                                            </tr>
+                                                            <tr>
+                                                              <th scope="row">4</th>
+                                                              <td>Geeta</td>
+                                                              <td>21</td>
+                                                              
+                                                            </tr>
+                                                            <tr>
+                                                              <th scope="row">5</th>
+                                                              <td>Ganesh ji</td>
+                                                              <td>51</td>
+                                                              
+                                                            </tr>
+                                                            <tr>
+                                                              <th scope="row">6</th>
+                                                              <td>Brahmaand</td>
+                                                              <td>30</td>
+                                                              
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+<!-- Detlete-->
+                            <div class="modal" tabindex="-1" role="dialog" id="detete">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Detlete</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                               <p>Do You want to detete the Astrologers ?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>

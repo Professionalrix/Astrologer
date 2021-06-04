@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Main Content -->
+	<section class="content">
+		<form action="CustomerDetails.jsp">
+			<div class="body_scroll">
+				<div class="block-header">
+					<div class="row">
+						<div class="col-lg-7 col-md-6 col-sm-12">
+							<h2>Customer list</h2>
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html"><i
+										class="zmdi zmdi-home"></i> Aero</a></li>
+								<!--  <li class="breadcrumb-item"> <a href="CustomerDetails.jsp">Customer Details</a></li> -->
+								<li class="breadcrumb-item active">Customer list</li>
+							</ul>
+							<button class="btn btn-primary btn-icon mobile_menu"
+								type="button">
+								<i class="zmdi zmdi-sort-amount-desc"></i>
+							</button>
+						</div>
+						<div class="col-lg-5 col-md-6 col-sm-12">
+							<button
+								class="btn btn-primary btn-icon float-right right_icon_toggle_btn"
+								type="button">
+								<i class="zmdi zmdi-arrow-right"></i>
+							</button>
+							<button class="btn btn-success btn-icon float-right"
+								type="button">
+								<i class="zmdi zmdi-plus"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!--  <form action="CustomerDetails.jsp"> -->
+				<div class="container-fluid">
+					<div class="row clearfix">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="card project_list">
+								<div class="table-responsive">
+									<table class="table table-hover c_table theme-color">
+										<thead>
+											<tr>
+												<th style="width: 50px;">Photo</th>
+												<!--<th></th>-->
+												<th>Name</th>
+												<th class="hidden-md-down">Contact</th>
+												<th></th>
+												<th>Joining Date</th>
+												<th class="hidden-md-down" width="150px">My Orders</th>
+												<th>Profile</th>
+												<th>Balance</th>
+												<th>Delete</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="customer :${customers}">
+												<td><img class="rounded avatar"
+												th:src="@{/assets/images/xs/avatar1.jpg}" alt="" name="nam">
+												</td>
+												<td><strong th:text="${customer.name}"></strong><br></td>
+												<td><strong th:text="${customer.contact}"></strong><br></td>
+												<td></td>
+												<td><strong th:text="${customer.joiningDate}"></strong><br></td>
+												<td><button type="button" class="btn btn-primary"
+														data-target="#myorder" data-toggle="modal">My
+														Order</button></td>
+													<!-- 
+														<td><button type="button" class="btn btn-primary"
+														data-target="#view" data-toggle="modal">View
+														Profile</button></td>  -->
+														<!-- <td><h5 th:text="${customer.customerId}"></h5></td> -->				
+												<td><a th:href="@{/admin/findById/(id=${customer.customerId})}" class="btn btn-primary"
+														id="editButton">View
+														Profile</a> </td>
+												<!-- <td> <a th:href="@{'/admin/findById/'+${customer.customerId}}">Hello</a></td> -->
+												
+														
+												<td><button type="button" class="btn btn-primary"
+														data-target="#mywallet" data-toggle="modal">Wallet</button></td>
+													<td>
+																										
+												<button th:onclick="|deleteCustomer(${customer.customerId})|" class="btn btn-primary ">Delete</button>
+												</td>
+											</tr>
+
+										</tbody>
+									</table> 
+								</div>
+								
+								
+							<!-- Customer Profile -->
+
+							<div class="modal" tabindex="-1" id="view">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Customer Profile</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<div id="content-container"
+												style="padding-top: 0px !important;">
+												<div class="text-center pad-all">
+													<div class="pad-ver">
+														<img class="rounded avatar"
+															th:src="@{/assets/images/xs/avatar1.jpg}" alt="">
+													</div>
+													<div class="pad-ver">
+														<h5><span id="editName2"></span></h5>
+													</div>
+													<h4 class="text-lg text-overflow mar-no">Customer
+														Details</h4>
+
+													<hr>
+												</div>
+
+
+												<div class="table-responsive">
+													<table class="table">
+														<thead>
+															<tr>
+																<td>Name</td>
+																<td><input type="text" id="editName" class="form-control" name="name"/></td>
+															</tr>
+															
+															<tr>
+																<td>Gender</td>
+																<td><input type="text" id="editGender" class="form-control" name="gender"/></td>
+															</tr>
+															<tr>
+																<td>Birth Date</td>
+																<td><input type="text" id="editDate" class="form-control" name="dob"/></td>
+															</tr>
+
+															<tr>
+																<td>Born Location</td>
+																<td><input type="text" id="editLocation" class="form-control" name="address"/></td>
+															</tr>
+															<tr>
+																<td>Coupon</td>
+																<td><input type="text" id="editCoupon" class="form-control" name="totalGift"/></td>
+															</tr>
+															<tr>
+																<td>Following</td>
+																<td><input type="text" id="editFollower" class="form-control" name="followers"/></td>
+															</tr>
+															<tr>
+																<td>Contact Us</td>
+																<td><input type="text" id="editContact" class="form-control" name="email"/></td>
+															</tr>
+														</thead>
+
+													</table>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary"
+											data-dismiss="modal">Save</button>
+									</div>
+								</div>
+							</div>
+						</div>
+								
+								
+								<!-- detete -->
+								<div class="modal" tabindex="-1" id="detete">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">Delete</h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<p>Do You want to delete the Customer?</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal">No</button>
+												<button type="button" class="btn btn-primary"
+													data-dismiss="modal">Yes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!--  My Order -->
+								<div class="modal" tabindex="-1" id="myorder">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">My Order</h5>
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<div id="content-container"
+													style="padding-top: 0px !important;">
+													<div class="text-center pad-all">
+														<div class="pad-ver">
+															<img class="rounded avatar"
+																th:src="@{/assets/images/xs/avatar1.jpg}" alt="">
+														</div>
+														<div class="pad-ver">Muskan</div>
+														<h4 class="text-lg text-overflow mar-no">Customer</h4>
+
+														<hr>
+													</div>
+
+
+													<div class="table-responsive">
+														<table class="table table-striped">
+															<thead>
+																<tr>
+																	<th scope="col">All</th>
+																	<th scope="col">Missed</th>
+																	<th scope="col">Upcoming</th>
+																	<th scope="col">Ongoing</th>
+																	<th scope="col">Finished</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+
+																	<td>20</td>
+																	<td>5</td>
+																	<td>10</td>
+																	<td>3</td>
+																	<td>2</td>
+																</tr>
+																<tr>
+																	<td>20</td>
+																	<td>5</td>
+																	<td>10</td>
+																	<td>3</td>
+																	<td>2</td>
+																</tr>
+																<tr>
+																	<td>20</td>
+																	<td>5</td>
+																	<td>10</td>
+																	<td>3</td>
+																	<td>2</td>
+																</tr>
+															</tbody>
+														</table>
+
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Edit</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Approval -->
+
+							<div class="modal" tabindex="-1" id="approve">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Approval</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<p>Do You want to approve the Customer?</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-dismiss="modal">No</button>
+											<button type="button" class="btn btn-primary"
+												data-dismiss="modal">Yes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						<!-- Customer Wallet-->
+
+						<div class="modal" tabindex="-1 " id="mywallet">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">Customer Wallet</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div id="content-container"
+											style="padding-top: 0px !important;">
+											<div class="text-center pad-all">
+												<div class="pad-ver">
+													<img class="rounded avatar"
+														th:src="@{/assets/images/xs/avatar1.jpg}" alt="">
+												</div>
+												<div class="pad-ver">Muskan</div>
+												<h4 class="text-lg text-overflow mar-no">Customer</h4>
+
+												<hr>
+											</div>
+
+
+											<div class="table-responsive">
+												<table class="table">
+													<thead>
+														<tr>
+															<td>Total Blance</td>
+														</tr>
+													</thead>
+												</table>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary"
+													data-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary"
+													data-dismiss="modal">Save</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+								<!--
+                           <ul class="pagination pagination-primary mt-4">
+                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                        </ul>
+                        -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</form>
+	</section>
+
+
+
+</body>
+</html>
